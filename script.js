@@ -1,9 +1,27 @@
 const audio = document.getElementById('audio');
+const audioSource = document.getElementById('audio-source');
 const playPauseBtn = document.getElementById('play-pause-btn');
 const playPauseIcon = document.getElementById('play-pause-icon');
 const repeatBtn = document.getElementById('repeat-btn');
 const progressBar = document.getElementById('progress-bar');
 const progressContainer = document.getElementById('progress-container');
+
+// Capturar parámetros dinámicos desde la URL
+const urlParams = new URLSearchParams(window.location.search);
+const songTitle = urlParams.get('title');
+const songArtist = urlParams.get('artist');
+const songFile = urlParams.get('song');
+const coverFile = urlParams.get('cover');
+
+// Aplicar cambios si vienen definidos en el link
+if (songTitle) document.querySelector('.track-title').textContent = songTitle;
+if (songArtist) document.querySelector('.track-artist').textContent = songArtist;
+if (coverFile) document.getElementById('cover-img').src = coverFile;
+
+if (songFile) {
+    audioSource.src = songFile;
+    audio.load(); // Vital para que cargue correctamente el nuevo archivo multimedia
+}
 
 // Inicializar estado de reproducción y autoplay
 document.addEventListener('DOMContentLoaded', () => {
