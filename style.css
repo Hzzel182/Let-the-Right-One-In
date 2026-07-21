@@ -7,7 +7,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #121214; /* Fondo negro idéntico al reproductor para que se funda en Notion */
+    background-color: #000000; /* Fondo negro puro para fundirse con Notion */
     display: flex;
     justify-content: center;
     align-items: center;
