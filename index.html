@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eternally - Ji Pyoung Kwon</title>
+    <title>Reproductor Notion</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="player-container">
         <div class="album-art">
-            <img src="cover.jpg" alt="Cover">
+            <img src="cover.jpg" alt="Cover" id="cover-img">
         </div>
         <div class="track-info">
             <div class="track-title">Eternally</div>
@@ -27,7 +27,10 @@
                 <i class="fas fa-redo"></i>
             </button>
         </div>
-        <audio id="audio" src="song.mp3" autoplay loop></audio>
+        <audio id="audio" autoplay loop>
+            <source src="song.mp3" id="audio-source">
+            Tu navegador no soporta elementos de audio.
+        </audio>
     </div>
     <script src="script.js"></script>
 </body>
